@@ -10,6 +10,7 @@ public class Scripture
     {
         _reference = reference;
         string[] splitWords = phrase.Split(" ");
+        _words = new List<Word>();
 
         foreach (string word in splitWords)
         {
@@ -32,7 +33,7 @@ public class Scripture
         string displayText = _reference.DisplayText() + ": ";
         foreach (Word i in _words)
         {
-            displayText += i + " ";
+            displayText += i.DisplayText() + " ";
         }
         return displayText;
     }
