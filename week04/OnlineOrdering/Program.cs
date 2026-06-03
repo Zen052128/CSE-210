@@ -36,8 +36,9 @@ class Program
 
     foreach (Order item in orders)
         {
-            Console.WriteLine(item.PackingLabel());
             Console.WriteLine(item.ShipppingLabel());
+            Console.WriteLine(item.PackingLabel());
+            Console.WriteLine($"Total Cost: {item.TotalCost()}");
             Console.WriteLine();
         }
     }

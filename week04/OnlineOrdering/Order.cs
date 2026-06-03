@@ -31,7 +31,7 @@ public class Order
     }
     public string PackingLabel()
     {
-        string label = " ";
+        string label = "";
         foreach (Product product in _products)
         {
             label += $"{product.DisplayName()}: {product.DisplayID()}\n";
@@ -40,6 +40,6 @@ public class Order
     }
     public string ShipppingLabel()
     {
-        return $"{_customer.Display()}";
+        return $"{_customer.Display()}\n";
     }
 }
