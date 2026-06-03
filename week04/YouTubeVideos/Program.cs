@@ -69,6 +69,8 @@ class Program
     foreach (Video video in masterlist)
         {
             video.Display();
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }

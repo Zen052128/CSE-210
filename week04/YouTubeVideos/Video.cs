@@ -19,11 +19,11 @@ public class Video
         Console.WriteLine($"{_length} seconds");
         Console.WriteLine();
         int totalComments = GetCommentCount();
-        Console.WriteLine($"Comments ({totalComments})");
+        Console.WriteLine($"COMMENTS({totalComments})");
+        Console.WriteLine();
         foreach (Comment comment in _comments)
         {
-            comment.Display();
-            Console.WriteLine();        
+            comment.Display();     
         }
     }
 }
