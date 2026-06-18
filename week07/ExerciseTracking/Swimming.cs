@@ -2,7 +2,7 @@ using System;
 public class Swimming : Activity
 {
     private double _laps;
-    public Swimming(DateTime date, double length, double laps) : base (date, length)
+    public Swimming(string date, double length, double laps) : base (date, length)
     {
         _laps = laps;
     }
@@ -12,6 +12,6 @@ public class Swimming : Activity
         double speed = distance / (_length / 60);
         double pace = _length / distance;
         
-        Console.WriteLine($"{_date} Running ({_length} min) - Distance {distance} kilometers, Speed {speed} kph, {pace} min per km");
+        Console.WriteLine($"{_date} Swimming ({_length} min) - Distance {distance} kilometers, Speed {speed} kph, Pace {pace} min per km");
     }
 }

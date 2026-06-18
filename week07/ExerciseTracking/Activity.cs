@@ -1,9 +1,9 @@
 using System;
 public abstract class Activity
 {
-    protected DateTime _date;
+    protected string _date;
     protected double _length;
-    public Activity(DateTime date, double length)
+    public Activity(string date, double length)
     {
         _date = date;
         _length = length;

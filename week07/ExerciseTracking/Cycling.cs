@@ -2,7 +2,7 @@ using System;
 public class Cycling : Activity
 {
     private double _speed;
-    public Cycling(DateTime date, double length, double speed) : base (date, length)
+    public Cycling(string date, double length, double speed) : base (date, length)
     {
         _speed = speed;
     }
@@ -11,6 +11,6 @@ public class Cycling : Activity
         double distance = _speed * (_length / 60);
         double pace = _length / distance;
         
-        Console.WriteLine($"{_date} Running ({_length} min) - Distance {distance} kilometers, Speed {_speed} kph, {pace} min per km");
+        Console.WriteLine($"{_date} Cycling ({_length} min) - Distance {distance} kilometers, Speed {_speed} kph, Pace {pace} min per km");
     }
 }
