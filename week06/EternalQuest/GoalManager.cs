@@ -60,7 +60,7 @@ public class GoalManager
     }
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine($"Level: {_level} ({_score}/{_exp})");
+        Console.WriteLine($"Level {_level} : {_score}/{_exp}");
         Console.WriteLine($"You have {_score} points!");
     }
     public void AddLevel()
