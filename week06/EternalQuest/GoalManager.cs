@@ -149,7 +149,7 @@ public class GoalManager
     {
         Console.Write("What is the filename for the goal file? ");
         string filename = Console.ReadLine();
-        File.AppendText($"{_score}");
+        File.AppendAllText(filename, $"{_score}" + "\n");
         
         foreach (Goal item in goalsList)
         {
