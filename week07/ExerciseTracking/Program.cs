@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         DateTime date = DateTime.Now;
-        string wordDate = date.ToString("dd MMMM YYYY");
+        string wordDate = date.ToString("dd MMMM yyyy");
 
         Running running1 = new Running(wordDate, 60, 10);
         running1.GetSummary();
