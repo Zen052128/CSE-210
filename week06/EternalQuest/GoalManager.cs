@@ -22,7 +22,7 @@ public class GoalManager
             Console.WriteLine("     4. Load Goals");
             Console.WriteLine("     5. Record Event");
             Console.WriteLine("     6. Quit");
-            Console.Write("Select a choice form the menu: ");
+            Console.Write("Select a choice from the menu: ");
             string userInput = Console.ReadLine();
             input = int.Parse(userInput);
             Console.WriteLine();
@@ -149,6 +149,7 @@ public class GoalManager
     {
         Console.Write("What is the filename for the goal file? ");
         string filename = Console.ReadLine();
+        File.AppendText($"{_score}");
         
         foreach (Goal item in goalsList)
         {
@@ -165,7 +166,10 @@ public class GoalManager
         string filename = Console.ReadLine();
 
         string[] lines = File.ReadAllLines(filename);
-        foreach (string line in lines)
+
+        _score = int.Parse(lines[0]);
+
+        foreach (string line in lines.Skip(1))
         {
             string[] parts = line.Split("|");
             string goalType = parts[0];

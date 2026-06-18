@@ -15,9 +15,9 @@ public class ChecklistGoal : Goal
     {
         _amountCompleted += 1;
 
-        if(_amountCompleted >= 2)
+        if(_amountCompleted == _target)
         {
-            _points = _bonus;
+            _points += _bonus;
         }
     }
     public override bool IsComplete()
@@ -48,6 +48,6 @@ public class ChecklistGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return $"Checklist Goal|{_shortName}|{_description}|{_points}|{_amountCompleted}|{_target}|{_bonus}|{IsComplete()}";
+        return $"Checklist Goal|{_shortName}|{_description}|{_points}|{_target}|{_amountCompleted}|{_bonus}|{IsComplete()}";
     }
 }
