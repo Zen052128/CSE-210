@@ -1,6 +1,0 @@
-Simple Goal|trial|trialtrialtrial|1|False
-Eternal Goal|eternaltrial|neverstoppingtrial|2|False
-Checklist Goal|trials|more trials|3|5|0|4|False
-Simple Goal|trial|trialtrialtrial|1|True
-Eternal Goal|eternaltrial|neverstoppingtrial|2|False
-Checklist Goal|trials|more trials|3|5|2|4|False

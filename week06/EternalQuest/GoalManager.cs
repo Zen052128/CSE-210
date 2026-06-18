@@ -3,6 +3,8 @@ public class GoalManager
 {
     private List<Goal> goalsList;
     private double _score;
+    private double _level;
+    private double _exp = 100;
     public GoalManager()
     {
         goalsList = new List<Goal>();
@@ -49,13 +51,25 @@ public class GoalManager
             }
             if (input == 6)
             {
+                Console.WriteLine();
+                Console.WriteLine("Thank you!");
                 break;
             }
+            AddLevel();
         }
     }
     public void DisplayPlayerInfo()
     {
+        Console.WriteLine($"Level: {_level} ({_score}/{_exp})");
         Console.WriteLine($"You have {_score} points!");
+    }
+    public void AddLevel()
+    {
+        while (_score >= _exp)
+        {
+            _level += 1;
+            _exp = _exp + (_level * 100);
+        }
     }
     public void ListGoalNames()
     {
@@ -149,7 +163,8 @@ public class GoalManager
     {
         Console.Write("What is the filename for the goal file? ");
         string filename = Console.ReadLine();
-        File.AppendAllText(filename, $"{_score}" + "\n");
+        File.WriteAllText(filename, "");
+        File.AppendAllText(filename, $"{_score}|{_level}|{_exp}" + "\n");
         
         foreach (Goal item in goalsList)
         {
@@ -166,8 +181,11 @@ public class GoalManager
         string filename = Console.ReadLine();
 
         string[] lines = File.ReadAllLines(filename);
-
-        _score = int.Parse(lines[0]);
+        
+        string[] line1parts = lines[0].Split("|");
+        _score = int.Parse(line1parts[0]);
+        _level = int.Parse(line1parts[1]);
+        _exp = int.Parse(line1parts[2]);
 
         foreach (string line in lines.Skip(1))
         {
